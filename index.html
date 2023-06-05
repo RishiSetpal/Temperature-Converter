@@ -1,0 +1,39 @@
+<!-- seperation of censern -->
+<!-- Program having any button -- so we are using addEventListerner -->
+
+<html>
+
+<head>
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="stylesheet1.css">
+</head>
+
+<body>
+    <center>
+        <h1>Temperature Converter</h1>
+        <form>
+            <input type="number" step="any" placeholder="Temp in celcious" id="celcious"> <br />
+            <input type="number" step="any" placeholder="Temp in faranide" id="faranide">
+        </form>
+        <script>
+            let celcious = document.getElementById("celcious");
+            let faranide = document.getElementById("faranide");
+
+            celcious.addEventListener("input", function () {
+                let c = parseFloat(celcious.value);
+                let f = (c * (9 / 5)) + 32
+                faranide.value = f;
+            });
+
+            faranide.addEventListener("input", function () {
+                let f = parseFloat(faranide.value);
+                let c = (f - 32) * 5 / 9
+                celcious.value = c;
+            });
+
+        </script>
+    </center>
+</body>
+
+
+</html>
